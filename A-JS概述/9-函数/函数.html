@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript 函数</title>
+    <link rel="stylesheet" href="../../src/styles/public.css">
+    <script src="http://cdn.webfont.youziku.com/wwwroot/js/wf/youziku.api.min.js"></script>
+</head>
+<body>
+
+<h2>函数是由事件驱动的或者当它被调用时执行的可重复使用的代码块。</h2>
+
+<h2>JavaScript 函数语法</h2>
+
+<ol>
+    <li>函数就是包裹在花括号中的代码块，前面使用了关键词 function</li>
+    <li>当调用该函数时，会执行函数内的代码。</li>
+    <li>可以在某事件发生时直接调用函数（比如当用户点击按钮时），也可以由 JavaScript 在任何位置进行调用。</li>
+</ol>
+
+<pre>
+    function functionName() {
+        这里是要执行的代码
+    }
+</pre>
+
+<i>JavaScript 对大小写敏感。关键词 function 必须是小写的，并且必须以与函数名称相同的大小写来调用函数。</i>
+
+<h2>调用带参数的函数</h2>
+
+<ol>
+    <li>在调用函数时，您可以向其传递值，这些值被称为参数，可以在函数中使用。</li>
+    <li>您可以发送任意多的参数，由逗号 (,) 分隔</li>
+    <li>变量和参数必须以一致的顺序出现。</li>
+    <li>当您声明函数时，请把参数作为变量来声明：</li>
+</ol>
+
+<pre>
+    function myFunction(argA, argB) {
+        这里是要执行的代码
+    }
+</pre>
+
+<h2>带有返回值的函数</h2>
+
+<ol>
+    <li>在使用 return 语句时，函数会停止执行，并返回指定的值到调用它的地方</li>
+</ol>
+
+<i>整个 JavaScript 并不会停止执行，仅仅是函数。JavaScript 将继续执行代码，从调用函数的地方。</i>
+
+<i>即使不把它保存为变量，您也可以使用返回值：</i>
+<pre>document.getElementById("demo").innerHTML=myFunction();</pre>
+
+<i>在您仅仅希望退出函数时 ，也可使用 return 语句。返回值是可选的：</i>
+<pre>
+    function myFunction(a,b) {
+        if (a>b) {
+            return;
+        }
+        x=a+b
+    }
+</pre>
+
+<h2>局部 JavaScript 变量</h2>
+
+<ol>
+    <li>在 JavaScript 函数内部声明的变量（使用 var 或 声明参数）是局部变量，所以只能在该声明函数内部访问它。（该变量的作用域是局部的）。</li>
+</ol>
+
+<i>只要函数运行完毕，本地变量就会被删除。</i>
+
+<h2>全局 JavaScript 变量</h2>
+
+<i>在函数外声明的变量是全局变量，网页上的所有脚本和函数都能访问它。</i>
+
+<h2>JavaScript 变量的生命周期</h2>
+
+<ol>
+    <li>JavaScript 变量的生命周期从它们被声明的时间开始。</li>
+    <li>局部变量会在函数运行以后被删除。</li>
+    <li>全局变量会在页面关闭后被删除。</li>
+</ol>
+
+<h2>向未声明的 JavaScript 变量来分配值</h2>
+
+<i>如果您把值赋给尚未声明的变量，该变量将被自动作为全局变量声明。（即使声明语句在函数内执行。）</i>
+
+<script src="../../src/scripts/public.js"></script>
+</body>
+</html>

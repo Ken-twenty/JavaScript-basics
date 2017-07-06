@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript HTML DOM 事件</title>
+    <link rel="stylesheet" href="../../src/styles/public.css">
+    <script src="http://cdn.webfont.youziku.com/wwwroot/js/wf/youziku.api.min.js"></script>
+</head>
+<body>
+
+<h2>HTML DOM 使 JavaScript 有能力对 HTML 事件做出反应</h2>
+
+<h2>对事件做出反应</h2>
+
+<ol>
+    <li>我们可以在事件发生时执行 JavaScript，比如当用户在 HTML 元素上点击时：</li>
+</ol>
+
+<pre>
+    onclick = <span>JavaScript</span>;
+</pre>
+
+<i>HTML 事件的例子：</i>
+
+<ul>
+    <li>当用户点击鼠标时</li>
+    <li>当网页已加载时</li>
+    <li>当图像已加载时</li>
+    <li>当鼠标移动到元素上时</li>
+    <li>当输入字段被改变时</li>
+    <li>当提交 HTML 表单时</li>
+    <li>当用户触发按键时</li>
+</ul>
+
+<h2>HTML 事件属性</h2>
+
+<ol>
+    <li>如需向 HTML 元素分配 事件，您可以使用事件属性。（onclick）</li>
+</ol>
+
+<h2>使用 HTML DOM 来分配事件</h2>
+
+<ol>
+    <li>HTML DOM 允许您通过使用 JavaScript 来向 HTML 元素分配事件：</li>
+</ol>
+
+<pre>
+    &lt;script&gt;
+        document.getElementById(<span>id</span>).onclick=function(){<span>code</span>};
+    &lt;/script&gt;
+</pre>
+
+<h2>onload 和 onunload 事件</h2>
+
+<ol>
+    <li>onload 和 onunload 事件会在用户进入或离开页面时被触发。</li>
+    <li>onload 事件可用于检测访问者的浏览器类型和浏览器版本，并基于这些信息来加载网页的正确版本。</li>
+    <li>onload 和 onunload 事件可用于处理 cookie。</li>
+</ol>
+
+<h2>onchange 事件</h2>
+
+<ol>
+    <li>onchange 事件常结合对输入字段的验证来使用。</li>
+</ol>
+
+<h2>onmouseover 和 onmouseout 事件</h2>
+
+<ol>
+    <li>onmouseover 和 onmouseout 事件可用于在用户的鼠标移至 HTML 元素上方或移出元素时触发函数。</li>
+</ol>
+
+<h2>onmousedown、onmouseup 以及 onclick 事件</h2>
+
+<ol>
+    <li>onmousedown, onmouseup 以及 onclick 构成了鼠标点击事件的所有部分。</li>
+    <li>首先当点击鼠标按钮时，会触发 onmousedown 事件。</li>
+    <li>当释放鼠标按钮时，会触发 onmouseup 事件。</li>
+    <li>最后，当完成鼠标点击的完整过程时，会触发 onclick 事件。</li>
+</ol>
+
+<script src="../../src/scripts/public.js"></script>
+</body>
+</html>

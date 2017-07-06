@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript 对象</title>
+    <link rel="stylesheet" href="../../src/styles/public.css">
+    <script src="http://cdn.webfont.youziku.com/wwwroot/js/wf/youziku.api.min.js"></script>
+</head>
+<body>
+
+<h2>JavaScript 中的所有事物都是对象：字符串、数值、数组、函数...</h2>
+
+<i>此外，JavaScript 允许自定义对象。</i>
+
+<h2>JavaScript 对象</h2>
+
+<ol>
+    <li>JavaScript 提供多个内建对象，比如 String、Date、Array 等等。</li>
+    <li>对象只是带有属性和方法的特殊数据类型。</li>
+</ol>
+
+<h2>访问对象的属性</h2>
+
+<ol>
+    <li>属性是与对象相关的值。访问对象属性的语法是：</li>
+</ol>
+
+<pre>
+    <span>objectName</span>.<span>propertyName</span>
+</pre>
+
+<h2>访问对象的方法</h2>
+
+<ol>
+    <li>方法是能够在对象上执行的动作。您可以通过以下语法来调用方法：</li>
+</ol>
+
+<pre>
+    <span>objectName</span>.<span>methodName</span>()
+</pre>
+
+<h2>创建 JavaScript 对象</h2>
+
+<ol>
+    <li>
+        通过 JavaScript，您能够定义并创建自己的对象。创建新对象有两种不同的方法：
+        <ol>
+            <li>定义并创建对象的实例 【new Object()、字面量对象】</li>
+            <li>使用函数来定义对象，然后创建新的对象实例【new 自定义构造函数()】</li>
+        </ol>
+    </li>
+</ol>
+
+<i>还有Object.create(<span>obj</span>)，<span>obj作为新对象的原型</span></i>
+
+<h2>把属性添加到 JavaScript 对象</h2>
+
+<ol>
+    <li>您可以通过为对象赋值，向已有对象添加新属性</li>
+    <li>假如obj已存在，你可以为其添加新属性及值：</li>
+</ol>
+
+<pre>
+    obj.<span>newKey</span> = <span>newValue</span>;
+</pre>
+
+<h2>把方法添加到 JavaScript 对象</h2>
+
+<ol>
+    <li>方法只不过是附加在对象上的函数。</li>
+    <li>在构造器函数内部定义对象的方法：</li>
+</ol>
+
+<pre>
+    function person(firstName,lastName,age,eyeColor) {
+        this.firstName=firstName;
+        this.lastName=lastName;
+        this.age=age;
+        this.eyeColor=eyeColor;
+
+        this.changeName=changeName;
+
+        function changeName(name) {
+            this.lastName=name;
+        }
+    }
+</pre>
+
+<h2>JavaScript 类</h2>
+
+<ol>
+    <li>JavaScript 是面向对象的语言，但 JavaScript 不使用类。</li>
+    <li>在 JavaScript 中，不会创建类，也不会通过类来创建对象（就像在其他面向对象的语言中那样）。</li>
+    <li>JavaScript 基于 prototype，而不是基于类的。</li>
+</ol>
+
+<h2>`JavaScript for...in 循环</h2>
+
+<ol>
+    <li>JavaScript for...in 语句循环遍历对象的属性。</li>
+</ol>
+
+<pre>
+    for (key in obj) {
+            // 要执行的代码
+            console.log(key + ':' + obj[key]);
+    }
+</pre>
+
+<i>for...in 循环中的代码块将针对每个属性（key）执行一次。</i>
+
+<script src="../../src/scripts/public.js"></script>
+</body>
+</html>

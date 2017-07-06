@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript 变量</title>
+    <link rel="stylesheet" href="../../src/styles/public.css">
+    <script src="http://cdn.webfont.youziku.com/wwwroot/js/wf/youziku.api.min.js"></script>
+</head>
+<body>
+
+<h2>变量是存储信息的容器</h2>
+
+<i>您可以把变量看做存储数据的容器。</i>
+
+<h2>JavaScript 变量</h2>
+
+<ol>
+    <li>变量必须以字母开头</li>
+    <li>变量也能以 $（美元） 和 _ 符号开头（不过我们不推荐这么做）</li>
+    <li>变量名称对大小写敏感（y 和 Y 是不同的变量）</li>
+</ol>
+
+<i>与代数一样，JavaScript 变量可用于存放值和表达式</i>
+<i>变量可以使用短名称，也可以使用描述性更好的名称。</i>
+
+<h2>JavaScript 数据类型（暂时只关注数字和字符串）</h2>
+
+<ol>
+    <li>当您向变量分配文本值时，应该用双引号或单引号包围这个值。</li>
+    <li>当您向变量赋的值是数值时，不要使用引号。如果您用引号包围数值，该值会被作为文本来处理。</li>
+</ol>
+
+<h2>声明（创建） JavaScript 变量</h2>
+
+<ol>
+    <li>
+        我们使用 var 关键词来声明变量
+        <pre>var name;</pre>
+    </li>
+    <li>
+        如需向变量赋值，请使用等号
+        <pre>name = 'Ken';</pre>
+    </li>
+</ol>
+
+<i>一个好的编程习惯是，在代码开始处，统一对需要的变量进行声明。</i>
+
+<h2>一条语句，多个变量</h2>
+
+<ol>
+    <li>
+        您可以在一条语句中声明很多变量。该语句以 var 开头，并使用逗号分隔变量即可
+        <pre>var name="Ken", age=23, job="FN-developer";</pre>
+    </li>
+    <li>
+        声明也可横跨多行
+        <pre>
+            var name="Ken",
+            age=23,
+            job="FN-developer";
+        </pre>
+    </li>
+</ol>
+
+<h2>Value = undefined</h2>
+
+<i>在计算机程序中，经常会声明无值的变量。未使用值来声明的变量，其值实际上是 undefined。</i>
+
+<h2>重新声明 JavaScript 变量（无赋值）</h2>
+
+<i>如果重新声明 JavaScript 变量，该变量的值不会丢失</i>
+
+<script src="../../src/scripts/public.js"></script>
+</body>
+</html>

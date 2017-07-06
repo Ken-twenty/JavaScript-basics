@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript 运算符 - 2</title>
+    <link rel="stylesheet" href="../../src/styles/public.css">
+    <script src="http://cdn.webfont.youziku.com/wwwroot/js/wf/youziku.api.min.js"></script>
+</head>
+<body>
+
+<h2>比较和逻辑运算符用于测试 true 或 false。</h2>
+
+<h2>比较运算符</h2>
+
+<ol>
+    <li>比较运算符在逻辑语句中使用，以测定变量或值是否匹配。</li>
+</ol>
+
+<h6 class="text-center">x=5</h6>
+<table>
+    <thead>
+    <tr>
+        <th>运算符</th>
+        <th>描述</th>
+        <th>例子</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>==</td>
+        <td>等于</td>
+        <td>x==8 为 false</td>
+    </tr>
+    <tr>
+        <td>===</td>
+        <td>全等（值和类型）</td>
+        <td>x===5 为 true；x==="5" 为 false</td>
+    </tr>
+    <tr>
+        <td>!=</td>
+        <td>不等于</td>
+        <td>x!=8 为 true</td>
+    </tr>
+    <tr>
+        <td>></td>
+        <td>大于</td>
+        <td>x>8 为 false</td>
+    </tr>
+    <tr>
+        <td><</td>
+        <td>小于	</td>
+        <td>x<8 为 true</td>
+    </tr>
+    <tr>
+        <td>>=</td>
+        <td>大于或等于</td>
+        <td>x>=8 为 false</td>
+    </tr>
+    <tr>
+        <td><=</td>
+        <td>小于或等于</td>
+        <td>x<=8 为 true</td>
+    </tr>
+    </tbody>
+</table>
+
+<h2>逻辑运算符</h2>
+
+<ol>
+    <li>逻辑运算符用于测定变量或值之间的语句逻辑。</li>
+</ol>
+
+<h6 class="text-center">x=6;y=3</h6>
+<table>
+    <thead>
+    <tr>
+        <th>运算符</th>
+        <th>描述</th>
+        <th>例子</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>&&</td>
+        <td>and</td>
+        <td>(x < 10 && y > 1) 为 true</td>
+    </tr>
+    <tr>
+        <td>||</td>
+        <td>or</td>
+        <td>(x==5 || y==5) 为 false</td>
+    </tr>
+    <tr>
+        <td>!</td>
+        <td>not</td>
+        <td>!(x==y) 为 true</td>
+    </tr>
+    </tbody>
+</table>
+
+<h2>条件运算符（三元运算符）</h2>
+
+<ol>
+    <li>JavaScript 还包含了 基于某些条件 对代码语句进行选择的 条件运算符：</li>
+</ol>
+
+<pre>
+    variableName=(condition)?value1:value2
+</pre>
+
+<i>condition == true -> value1, condition == false -> value2</i>
+
+<script src="../../src/scripts/public.js"></script>
+</body>
+</html>

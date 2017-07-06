@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript使用</title>
+    <link rel="stylesheet" href="../../src/styles/public.css">
+    <script src="http://cdn.webfont.youziku.com/wwwroot/js/wf/youziku.api.min.js"></script>
+</head>
+<body>
+
+<strong>
+    HTML 中的脚本必须位于 &lt;script&gt; 与 &lt;/script&gt; 标签之间。<br>
+    脚本可被放置在 HTML 页面的 &lt;body&gt; 和 &lt;head&gt; 部分中。
+</strong>
+
+<h2>&lt;script&gt;标签</h2>
+
+<ol>
+    <li>如需在 HTML 页面中插入 JavaScript，请使用 &lt;script&gt; 标签。</li>
+    <li>&lt;script&gt; 和 &lt;/script&gt; 会告诉 JavaScript 在何处开始和结束。</li>
+    <li>&lt;script&gt; 和 &lt;/script&gt; 之间的代码行包含了 JavaScript</li>
+</ol>
+
+<i>那些老旧的实例可能会在 &lt;script&gt; 标签中使用 type="text/javascript"。现在已经不必这样做了。JavaScript 是所有现代浏览器以及 HTML5 中的默认脚本语言。</i>
+
+
+<h2>&lt;head&gt; 或 &lt;body&gt; 中的 JavaScript</h2>
+
+<ol>
+    <li>您可以在 HTML 文档中放入不限数量的脚本。</li>
+    <li>脚本可位于 HTML 的 &lt;body&gt; 或 &lt;head&gt; 部分中，或者同时存在于两个部分中。</li>
+    <li>通常的做法是把函数放入 &lt;head&gt; 部分中，或者放在页面（&lt;body&gt;）底部。这样就可以把它们安置到同一处位置，不会干扰页面的内容。</li>
+</ol>
+
+<i>我们把 JavaScript 放到了页面代码的底部，这样就可以确保在 文档 元素创建之后再执行脚本。</i>
+
+<h2>外部的 JavaScript</h2>
+
+<ol>
+    <li>也可以把脚本保存到外部文件中。外部文件通常包含被多个网页使用的代码。</li>
+    <li>外部 JavaScript 文件的文件扩展名是 .js。</li>
+    <li>如需使用外部文件，请在 &lt;script&gt; 标签的 "src" 属性中设置该 .js 文件：</li>
+</ol>
+
+<i>提示：外部脚本不能包含 &lt;script&gt; 标签。</i>
+<script src="../../src/scripts/public.js"></script>
+</body>
+</html>

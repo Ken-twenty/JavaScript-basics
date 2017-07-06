@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript Switch 语句</title>
+    <link rel="stylesheet" href="../../src/styles/public.css">
+    <script src="http://cdn.webfont.youziku.com/wwwroot/js/wf/youziku.api.min.js"></script>
+</head>
+<body>
+
+<h2>条件语句用于基于不同的条件来执行不同的动作。</h2>
+
+<h2>JavaScript Switch 语句</h2>
+
+<ol>
+    <li>请使用 switch 语句来选择要执行的多个代码块之一。</li>
+    <li>
+        工作原理：首先设置表达式 n（通常是一个变量）。<br>
+        随后表达式的值会与结构中的每个 case 的值做比较。<br>
+        如果存在匹配，则与该 case 关联的代码块会被执行。
+    </li>
+    <li>请使用 break 来阻止代码自动地向下一个 case 运行。</li>
+</ol>
+
+<pre>
+    switch(n) {
+        case 1:
+            执行代码块 1
+            break;
+        case 2:
+            执行代码块 2
+            break;
+        default:
+            n 与 case 1 和 case 2 不同时执行的代码
+    }
+</pre>
+
+<h2>default 关键词</h2>
+
+<ol>
+    <li>请使用 default 关键词来规定匹配不存在时做的事情</li>
+</ol>
+
+<script src="../../src/scripts/public.js"></script>
+</body>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript Number 对象</title>
+    <link rel="stylesheet" href="../../src/styles/public.css">
+    <script src="http://cdn.webfont.youziku.com/wwwroot/js/wf/youziku.api.min.js"></script>
+</head>
+<body>
+
+<h2>JavaScript Number 对象</h2>
+
+<ol>
+    <li>JavaScript 只有一种数字类型。</li>
+    <li>可以使用也可以不使用小数点来书写数字。</li>
+</ol>
+
+<h2>JavaScript 数字</h2>
+
+<ol>
+    <li>JavaScript 数字可以使用也可以不使用小数点来书写</li>
+    <li>极大或极小的数字可通过科学（指数）计数法来写：</li>
+</ol>
+
+<pre>
+    var y=123e5;    // 12300000
+    var z=123e-5;   // 0.00123
+</pre>
+
+<h2>所有 JavaScript 数字均为 64 位</h2>
+
+<ol>
+    <li>JavaScript 不是类型语言。与许多其他编程语言不同，JavaScript 不定义不同类型的数字，比如整数、短、长、浮点等等。</li>
+    <li>JavaScript 中的所有数字都存储为根为 10 （指十进制数字）的 64 位（8 比特），浮点数。</li>
+</ol>
+
+<i>任何数都可以用 n = s * 2^p 表示，即 n = 尾数 * 底数 ^ 阶码，进制决定底数；阶码决定小数点的位置。</i>
+<i>阶码为固定值时，这样的数称为定点数；阶码可变时，这样的数称为浮点数。</i>
+<i>十进制转二进制，很多数字的转化结果往往不能确定小数点的位置（循环小数），因而会有精度取舍。</i>
+<i>js的展示层是十进制，底层运算是二进制。</i>
+
+<h2>精度</h2>
+
+<ol>
+    <li>整数（不使用小数点或指数计数法）最多为 15 位。</li>
+    <li>小数的最大位数是 17，但是浮点运算并不总是 100% 准确（见上文）</li>
+</ol>
+
+<h2>八进制和十六进制</h2>
+
+<ol>
+    <li>如果前缀为 0，则 JavaScript 会把数值常量解释为八进制数。</li>
+    <li>如果前缀为 0 和 "x"，则解释为十六进制数。</li>
+</ol>
+
+<h2>数字属性和方法（Number对象）</h2>
+<ol>
+    <li>
+        <h4>属性</h4>
+        <ul>
+            <li>MAX VALUE（最大值）</li>
+            <li>MIN VALUE（最小值）</li>
+            <li>NEGATIVE INFINITY（负无穷大）</li>
+            <li>POSITIVE INFINITY（正无穷大）</li>
+            <li>NaN（不是一个数字）</li>
+            <li>prototype（原型）</li>
+            <li>constructor（构造函数是Function）</li>
+        </ul>
+    </li>
+
+    <li>
+        <h4>方法</h4>
+        <ul>
+            <li>toExponential()（可把对象的值转换成指数计数法）</li>
+            <li>toFixed()（四舍五入，可控制小数位个数，0-20）</li>
+            <li>toPrecision()（同toExponential，但可控制有效数字的个数，1-21；底数第一位一定是个位）</li>
+            <li>toString()（把Number对象的数字转化为字符串类型）</li>
+            <li>valueOf()（返回Number对象的数字值）</li>
+        </ul>
+    </li>
+</ol>
+
+<pre>
+    var numA = new Number(520);
+    var resultA = numA.toExponential(); // 5.2e+2
+
+    var numB = new Number(5.2);
+    var resultB = numB.toFixed(2); // "5.20"
+
+    var numC = new Number(520000);
+    var resultC =numC.toPrecision(2); // "5.2e+5"
+
+    var numD = new Number(520000);
+    var resultD =numD.toString(2); // "520000"
+
+    var numE = new Number(520000);
+    var resultE = numE.valueOf(); // 520000
+</pre>
+
+<script src="../../src/scripts/public.js"></script>
+</body>
+</html>

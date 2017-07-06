@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript Break 和 Continue 语句</title>
+    <link rel="stylesheet" href="../../src/styles/public.css">
+    <script src="http://cdn.webfont.youziku.com/wwwroot/js/wf/youziku.api.min.js"></script>
+</head>
+<body>
+
+<h2>
+    break 语句用于跳出循环。<br>
+    continue 用于跳过循环中的一个迭代。
+</h2>
+
+<h2>Break 语句</h2>
+
+<ol>
+    <li>我们已经在本教程稍早的章节中见到过 break 语句。它用于跳出 switch() 语句。</li>
+    <li>break 语句可用于跳出循环。</li>
+    <li>break 语句跳出循环后，会继续执行该循环之后的代码（如果有的话）</li>
+</ol>
+
+<h2>Continue 语句</h2>
+
+<ol>
+    <li>如果出现了指定的条件，continue 语句将中断正在循环中的迭代，然后继续循环中的下一个迭代。</li>
+</ol>
+
+<h2>JavaScript 标签</h2>
+
+<ol>
+    <li>正如您在 switch 语句那一章中看到的，可以对 JavaScript 语句进行标记。（case）</li>
+    <li>如需标记 JavaScript 语句，请在语句之前加上冒号：</li>
+</ol>
+
+<pre>
+    label:
+    语句;
+</pre>
+
+<i>break 和 continue 语句仅仅是能够跳出代码块的语句。</i>
+
+<pre>
+    break labelName;
+
+    continue labelName;
+</pre>
+
+<ol>
+    <li><i>continue 语句（带有或不带标签引用）只能用在循环中。</i></li>
+    <li><i>break 语句（不带标签引用），只能用在循环或 switch 中。</i></li>
+    <li><i>通过标签引用，break 语句可用于跳出任何 JavaScript 代码块</i></li>
+</ol>
+
+<script src="../../src/scripts/public.js"></script>
+</body>
+</html>

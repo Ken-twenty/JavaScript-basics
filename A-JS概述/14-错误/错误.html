@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript 错误</title>
+    <link rel="stylesheet" href="../../src/styles/public.css">
+    <script src="http://cdn.webfont.youziku.com/wwwroot/js/wf/youziku.api.min.js"></script>
+</head>
+<body>
+
+<h2>try 语句测试代码块的错误。</h2>
+<h2>catch 语句处理错误。</h2>
+<h2>throw 语句创建自定义错误。</h2>
+
+<h2>JavaScript 抛出错误</h2>
+
+<ol>
+    <li>当错误发生时，当事情出问题时，JavaScript 引擎通常会停止，并生成一个错误消息。</li>
+    <li>描述这种情况的技术术语是：JavaScript 将抛出一个错误。</li>
+</ol>
+
+<h2>JavaScript 测试和捕捉</h2>
+
+<ol>
+    <li>try 语句允许我们定义在执行时进行错误测试的代码块。</li>
+    <li>catch 语句允许我们定义当 try 代码块发生错误时，所执行的代码块。</li>
+    <li>JavaScript 语句 try 和 catch 是成对出现的。</li>
+</ol>
+
+<pre>
+    try {
+        //在这里运行代码
+    } catch(err) {
+        //在这里处理错误
+    }
+</pre>
+<br>
+
+<button onclick="clickFnA()">点我执行clickFnA()</button>
+<br><br>
+<pre>
+    function clickFn() {
+        try {
+            KEN();
+        } catch(error) {
+            alert('错误类型：' + error.name + '\r\r' + '错误描述：' + error.message);
+        }
+
+        // catch代码块外面的代码依然会被执行
+        alert('catch代码块外面的代码依然会被执行');
+    }
+</pre>
+
+<h2>Throw 语句</h2>
+
+<ol>
+    <li>throw 语句允许我们创建自定义错误。</li>
+    <li>正确的技术术语是：创建或抛出异常（exception）。</li>
+    <li>如果把 throw 与 try 和 catch 一起使用，那么您能够控制程序流，并生成自定义的错误消息。</li>
+</ol>
+
+<pre>
+    throw exception
+</pre>
+
+<i>exception（异常）可以是JavaScript 字符串、数字、逻辑值或对象。</i>
+
+<input type="text" title="改版" placeholder="请输入20">
+<button onclick="clickFnB()">点我执行clickFnB()</button>
+<p class="tips"></p>
+
+<pre>
+    var value, tips;
+
+    String.prototype.trim = function () {
+        return this.replace(/(^\s*)|(\s*$)/g,'');
+    };
+
+    function clickFnB() {
+        try {
+            value = document.getElementsByTagName('input')[0].value.trim();
+
+            if (value === '') throw 'Tt can not be null!';
+
+            // 类型转换
+            value /= 1;
+            if (isNaN(value)) throw 'It should be a number!';
+            if (value !== 20) throw 'It must be a twenty!';
+        } catch (error) {
+            tips = document.getElementsByClassName('tips')[0];
+            tips.innerHTML = '错误：' + error;
+        }
+        if (value === 20) {
+            tips = document.getElementsByClassName('tips')[0];
+            tips.innerHTML = 'Bingo!';
+        }
+    }
+</pre>
+
+<script src="../../src/scripts/public.js"></script>
+<script>
+    function clickFnA() {
+        try {
+            KEN();
+        } catch(error) {
+            alert('错误类型：' + error.name + '\r\r' + '错误描述：' + error.message);
+        }
+
+        // catch代码块外面的代码依然会被执行
+        alert('catch代码块外面的代码依然会被执行');
+    }
+
+    var value, tips;
+
+    String.prototype.trim = function () {
+        return this.replace(/(^\s*)|(\s*$)/g,'');
+    };
+
+    function clickFnB() {
+        try {
+            value = document.getElementsByTagName('input')[0].value.trim();
+
+            if (value === '') throw 'Tt can not be null!';
+
+            // 类型转换
+            value /= 1;
+            if (isNaN(value)) throw 'It should be a number!';
+            if (value !== 20) throw 'It must be a twenty!';
+        } catch (error) {
+            tips = document.getElementsByClassName('tips')[0];
+            tips.innerHTML = '错误：' + error;
+        }
+        if (value === 20) {
+            tips = document.getElementsByClassName('tips')[0];
+            tips.innerHTML = 'Bingo!';
+        }
+    }
+</script>
+</body>
+</html>
