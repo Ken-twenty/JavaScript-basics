@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>JavaScript HTML DOM 元素（节点）</title>
     <link rel="stylesheet" href="../../src/styles/public.css">
-    <script src="http://cdn.webfont.youziku.com/wwwroot/js/wf/youziku.api.min.js"></script>
+
 </head>
 <body>
 
@@ -14,7 +14,7 @@
     <li>如需向 HTML DOM 添加新元素，您必须首先创建该元素（元素节点），然后向一个已存在的元素追加该元素。</li>
 </ol>
 
-<pre>
+<p>
     &lt;div id="box"&gt;
         &lt;p id="p1">这是一个段落&lt;/p&gt;
         &lt;p id="p2">这是另一个段落&lt;/p&gt;
@@ -28,7 +28,7 @@
         var element=document.getElementById("box");
         element.appendChild(para);
     &lt;/script&gt;
-</pre>
+</p>
 
 <h2>删除已有的 HTML 元素</h2>
 
@@ -36,7 +36,7 @@
     <li>如需删除 HTML 元素，您必须首先获得该元素的父元素：</li>
 </ol>
 
-<pre>
+<p>
     &lt;div id="box"&gt;
         &lt;p id="p1">这是一个段落。&lt;/p&gt;
         &lt;p id="p2">这是另一个段落。&lt;/p&gt;
@@ -47,15 +47,15 @@
         var child=document.getElementById("p1");
         parent.removeChild(child);
     &lt;/script&gt;
-</pre>
+</p>
 
 <i>这是常用的解决方案：找到您希望删除的子元素，然后使用其 parentNode 属性来找到父元素：</i>
 
-<pre>
+<p>
     var child=document.getElementById(<span>id</span>);
     child.parentNode.removeChild(child);
-</pre>
+</p>
 
-<script src="../../src/scripts/public.js"></script>
+
 </body>
 </html>

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>JavaScript 对象</title>
     <link rel="stylesheet" href="../../src/styles/public.css">
-    <script src="http://cdn.webfont.youziku.com/wwwroot/js/wf/youziku.api.min.js"></script>
+
 </head>
 <body>
 
@@ -25,9 +25,9 @@
     <li>属性是与对象相关的值。访问对象属性的语法是：</li>
 </ol>
 
-<pre>
+<p>
     <span>objectName</span>.<span>propertyName</span>
-</pre>
+</p>
 
 <h2>访问对象的方法</h2>
 
@@ -35,9 +35,9 @@
     <li>方法是能够在对象上执行的动作。您可以通过以下语法来调用方法：</li>
 </ol>
 
-<pre>
+<p>
     <span>objectName</span>.<span>methodName</span>()
-</pre>
+</p>
 
 <h2>创建 JavaScript 对象</h2>
 
@@ -60,9 +60,9 @@
     <li>假如obj已存在，你可以为其添加新属性及值：</li>
 </ol>
 
-<pre>
+<p>
     obj.<span>newKey</span> = <span>newValue</span>;
-</pre>
+</p>
 
 <h2>把方法添加到 JavaScript 对象</h2>
 
@@ -71,7 +71,7 @@
     <li>在构造器函数内部定义对象的方法：</li>
 </ol>
 
-<pre>
+<p>
     function person(firstName,lastName,age,eyeColor) {
         this.firstName=firstName;
         this.lastName=lastName;
@@ -84,7 +84,7 @@
             this.lastName=name;
         }
     }
-</pre>
+</p>
 
 <h2>JavaScript 类</h2>
 
@@ -100,15 +100,15 @@
     <li>JavaScript for...in 语句循环遍历对象的属性。</li>
 </ol>
 
-<pre>
+<p>
     for (key in obj) {
             // 要执行的代码
             console.log(key + ':' + obj[key]);
     }
-</pre>
+</p>
 
 <i>for...in 循环中的代码块将针对每个属性（key）执行一次。</i>
 
-<script src="../../src/scripts/public.js"></script>
+
 </body>
 </html>

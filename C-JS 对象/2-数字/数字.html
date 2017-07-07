@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>JavaScript Number 对象</title>
     <link rel="stylesheet" href="../../src/styles/public.css">
-    <script src="http://cdn.webfont.youziku.com/wwwroot/js/wf/youziku.api.min.js"></script>
+
 </head>
 <body>
 
@@ -22,10 +22,10 @@
     <li>极大或极小的数字可通过科学（指数）计数法来写：</li>
 </ol>
 
-<pre>
+<p>
     var y=123e5;    // 12300000
     var z=123e-5;   // 0.00123
-</pre>
+</p>
 
 <h2>所有 JavaScript 数字均为 64 位</h2>
 
@@ -71,7 +71,7 @@
     <li>
         <h4>方法</h4>
         <ul>
-            <li>toExponential()（可把对象的值转换成指数计数法）</li>
+            <li>toExponential()（可把Number对象的值转换成指数计数法）</li>
             <li>toFixed()（四舍五入，可控制小数位个数，0-20）</li>
             <li>toPrecision()（同toExponential，但可控制有效数字的个数，1-21；底数第一位一定是个位）</li>
             <li>toString()（把Number对象的数字转化为字符串类型）</li>
@@ -80,7 +80,7 @@
     </li>
 </ol>
 
-<pre>
+<p>
     var numA = new Number(520);
     var resultA = numA.toExponential(); // 5.2e+2
 
@@ -95,8 +95,8 @@
 
     var numE = new Number(520000);
     var resultE = numE.valueOf(); // 520000
-</pre>
+</p>
 
-<script src="../../src/scripts/public.js"></script>
+
 </body>
 </html>

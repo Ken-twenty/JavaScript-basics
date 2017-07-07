@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>JavaScript 函数</title>
     <link rel="stylesheet" href="../../src/styles/public.css">
-    <script src="http://cdn.webfont.youziku.com/wwwroot/js/wf/youziku.api.min.js"></script>
+
 </head>
 <body>
 
@@ -18,11 +18,11 @@
     <li>可以在某事件发生时直接调用函数（比如当用户点击按钮时），也可以由 JavaScript 在任何位置进行调用。</li>
 </ol>
 
-<pre>
+<p>
     function functionName() {
         这里是要执行的代码
     }
-</pre>
+</p>
 
 <i>JavaScript 对大小写敏感。关键词 function 必须是小写的，并且必须以与函数名称相同的大小写来调用函数。</i>
 
@@ -35,11 +35,11 @@
     <li>当您声明函数时，请把参数作为变量来声明：</li>
 </ol>
 
-<pre>
+<p>
     function myFunction(argA, argB) {
         这里是要执行的代码
     }
-</pre>
+</p>
 
 <h2>带有返回值的函数</h2>
 
@@ -50,17 +50,17 @@
 <i>整个 JavaScript 并不会停止执行，仅仅是函数。JavaScript 将继续执行代码，从调用函数的地方。</i>
 
 <i>即使不把它保存为变量，您也可以使用返回值：</i>
-<pre>document.getElementById("demo").innerHTML=myFunction();</pre>
+<p>document.getElementById("demo").innerHTML=myFunction();</p>
 
 <i>在您仅仅希望退出函数时 ，也可使用 return 语句。返回值是可选的：</i>
-<pre>
+<p>
     function myFunction(a,b) {
         if (a>b) {
             return;
         }
         x=a+b
     }
-</pre>
+</p>
 
 <h2>局部 JavaScript 变量</h2>
 
@@ -86,6 +86,6 @@
 
 <i>如果您把值赋给尚未声明的变量，该变量将被自动作为全局变量声明。（即使声明语句在函数内执行。）</i>
 
-<script src="../../src/scripts/public.js"></script>
+
 </body>
 </html>
