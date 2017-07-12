@@ -34,14 +34,13 @@ span {
     color: #123456;
 }
 
-p {
+pre {
     background: rgba(0,0,0,.3);
     color: #fff;
-    padding: 10px;
     border-radius: 8px;
     margin: 10px 0 0;
-    font-family: monospace;
-    white-space: pre;
+    padding: 20px;
+    font-family: Consolas, 'Microsoft YaHei UI', sans-serif;
 }
 
 table {

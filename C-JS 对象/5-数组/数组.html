@@ -17,27 +17,24 @@
 
         <ul>
             <li>
-                <p>
+                <pre>
                     var cars = new Array();
                     cars[0]="Saab";
                     cars[1]="Volvo";
-                    cars[2]="BMW";
-                </p>
+                    cars[2]="BMW";</pre>
             </li>
 
             <li>
-                <p>
+                <pre>
                     var cars=new Array(3);
                     cars[0]="Saab";
                     cars[1]="Volvo";
-                    cars[2]="BMW";
-                </p>
+                    cars[2]="BMW";</pre>
             </li>
 
             <li>
-                <p>
-                    var cars = new Array("Saab","Volvo","BMW");
-                </p>
+                <pre>
+                    var cars = new Array("Saab","Volvo","BMW");</pre>
             </li>
         </ul>
     </li>
@@ -45,21 +42,76 @@
     <li>
         <h4>访问数组</h4>
 
-        <p>
-            <span>array</span>[<span>index</span>];
-        </p>
+        <pre>
+            <span>array</span>[<span>index</span>];</pre>
+
+        <i>也可以用 for...in 循环来访问数组，数组的下标相当于对象的键</i>
     </li>
 
     <li>
         <h4>修改已有数组中的值</h4>
 
-        <p>
-            <span>array</span>[<span>index</span>] = <span>newValue</span>
-        </p>
+        <pre>
+            <span>array</span>[<span>index</span>] = <span>newValue</span></pre>
     </li>
 
     <li>
-        <h4></h4>
+        <h4>concat（合并两个数组）</h4>
+
+        <pre>
+            <span>arrayA</span>.concat(<span>arrayB</span>)</pre>
+    </li>
+
+    <li>
+        <h4>join（用数组的元素组成字符串）</h4>
+
+        <pre>
+            var arr = new Array(3);
+            arr[0] = "George"
+            arr[1] = "John"
+            arr[2] = "Thomas"
+
+            document.write(arr.join()); // George,John,Thomas （默认逗号）
+
+            document.write(arr.join('.')); // George.John.Thomas</pre>
+    </li>
+
+    <li>
+        <h4>sort（文字数组）</h4>
+
+        <pre>
+            var arr = new Array(6)
+            arr[0] = "George"
+            arr[1] = "John"
+            arr[2] = "Thomas"
+            arr[3] = "James"
+            arr[4] = "Andrew"
+            arr[5] = "Martin"
+
+            document.write(arr + "&lt;br /&gt;"); // George,John,Thomas,James,Andrew,Martin
+
+            document.write(arr.sort()); // Andrew,George,James,John,Martin,Thomas （ASCII码排序）</pre>
+    </li>
+
+    <li>
+        <h4>sort（数字数组）</h4>
+
+        <pre>
+            var arr = new Array(6)
+            arr[0] = "10"
+            arr[1] = "5"
+            arr[2] = "40"
+            arr[3] = "25"
+            arr[4] = "1000"
+            arr[5] = "1"
+
+            // 冒泡排序，循环比较，返回值大于零（true）时，交换位置，返回值小于等于零（false）时，不变。
+
+            document.write(arr.sort(function (a, b) {return a - b})); // 正序排列 1,5,10,25,40,1000
+
+            document.write(arr.sort(function (a, b) {return b - a})); // 降序排列 1000,40,25,10,5,1
+
+            document.write(arr.sort(function (a, b) {return true;})); // 反序排列 1,1000,25,40,5,10</pre>
     </li>
 </ol>
 

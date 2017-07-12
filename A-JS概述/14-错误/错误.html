@@ -27,18 +27,18 @@
     <li>JavaScript 语句 try 和 catch 是成对出现的。</li>
 </ol>
 
-<p>
+<pre>
     try {
         //在这里运行代码
     } catch(err) {
         //在这里处理错误
     }
-</p>
+</pre>
 <br>
 
 <button onclick="clickFnA()">点我执行clickFnA()</button>
 <br><br>
-<p>
+<pre>
     function clickFn() {
         try {
             KEN();
@@ -49,7 +49,7 @@
         // catch代码块外面的代码依然会被执行
         alert('catch代码块外面的代码依然会被执行');
     }
-</p>
+</pre>
 
 <h2>Throw 语句</h2>
 
@@ -59,17 +59,17 @@
     <li>如果把 throw 与 try 和 catch 一起使用，那么您能够控制程序流，并生成自定义的错误消息。</li>
 </ol>
 
-<p>
+<pre>
     throw exception
-</p>
+</pre>
 
 <i>exception（异常）可以是JavaScript 字符串、数字、逻辑值或对象。</i>
 
 <input type="text" title="改版" placeholder="请输入20">
 <button onclick="clickFnB()">点我执行clickFnB()</button>
-<p class="tips"></p>
+<strong class="tips"></strong>
 
-<p>
+<pre>
     var value, tips;
 
     String.prototype.trim = function () {
@@ -95,7 +95,7 @@
             tips.innerHTML = 'Bingo!';
         }
     }
-</p>
+</pre>
 
 
 <script>

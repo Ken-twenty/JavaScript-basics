@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript RegExp 对象</title>
+    <link rel="stylesheet" href="../../src/styles/public.css">
+</head>
+<body>
+
+<h2>RegExp 对象用于规定在文本中检索的内容。</h2>
+
+<h2>什么是 RegExp？</h2>
+
+<ul>
+    <li>RegExp 是正则表达式的缩写。</li>
+    <li>当您检索某个文本时，可以使用一种模式来描述要检索的内容。RegExp 就是这种模式。</li>
+    <li>简单的模式可以是一个单独的字符。</li>
+    <li>更复杂的模式包括了更多的字符，并可用于解析、格式检查、替换等等。</li>
+    <li>您可以规定字符串中的检索位置，以及要检索的字符类型，等等。</li>
+</ul>
+
+<h2>定义 RegExp</h2>
+
+<ol>
+    <li>RegExp 对象用于存储检索模式。</li>
+    <li>通过 new 关键词来定义 RegExp 对象。</li>
+</ol>
+
+<pre>
+    var pattern = new RegExp("Ken");
+</pre>
+
+<i>当您使用该 RegExp 对象在一个字符串中检索时，将寻找的是字符 "Ken"。</i>
+
+<h2>RegExp 对象的方法</h2>
+
+<ol>
+    <li>
+        <h4>test()</h4>
+
+        <pre>
+            var pattern = new RegExp("Ken");
+
+            document.write(pattern.test("KenMustang")); // true</pre>
+
+        <i>test() 方法检索字符串中的指定值。返回值是 true 或 false。</i>
+    </li>
+    <li>
+        <h4>exec()</h4>
+
+        <pre>
+            var pattern = new RegExp("Ken");
+
+            console.log(pattern.exec("KenMustang")); // ["Ken", index: 0, input: "KenMustang"]</pre>
+
+        <i>exec() 方法检索字符串中的指定值。返回值是包含被找到的值的结果数组。如果没有发现匹配，则返回 null。</i>
+
+        <pre>
+            var pattern = new RegExp("Ken", 'g');
+
+            do {
+                result = pattern.exec("KenMustang");
+                if (result === null) break;
+
+                console.log(result);
+            } while (result !== null)
+
+            // ["Ken", index: 0, input: "KenMustang"]</pre>
+
+        <i>您可以向 RegExp 对象添加第二个参数，以设定检索。（"g": 全局）</i>
+        <i>找到第一个 "e"，并存储其位置</i>
+        <i>如果再次运行 exec()，则从存储的位置开始检索，并找到下一个 "e"，并存储其位置</i>
+        <i>要手动规避返回null的情况</i>
+    </li>
+    <li>
+        <h4>compile()</h4>
+
+        <pre>
+            var pattern = new RegExp("Ken");
+
+            pattern.test("KenMustang"); // true
+
+            pattern.compile("20");
+
+            pattern.test("KenMustang"); // false</pre>
+
+        <i>compile() 方法用于改变 RegExp。</i>
+        <i>compile() 既可以改变检索模式，也可以添加或删除第二个参数。</i>
+    </li>
+</ol>
+
+</body>
+</html>

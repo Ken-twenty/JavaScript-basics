@@ -18,11 +18,11 @@
     <li>可以在某事件发生时直接调用函数（比如当用户点击按钮时），也可以由 JavaScript 在任何位置进行调用。</li>
 </ol>
 
-<p>
+<pre>
     function functionName() {
         这里是要执行的代码
     }
-</p>
+</pre>
 
 <i>JavaScript 对大小写敏感。关键词 function 必须是小写的，并且必须以与函数名称相同的大小写来调用函数。</i>
 
@@ -35,11 +35,11 @@
     <li>当您声明函数时，请把参数作为变量来声明：</li>
 </ol>
 
-<p>
+<pre>
     function myFunction(argA, argB) {
         这里是要执行的代码
     }
-</p>
+</pre>
 
 <h2>带有返回值的函数</h2>
 
@@ -50,17 +50,17 @@
 <i>整个 JavaScript 并不会停止执行，仅仅是函数。JavaScript 将继续执行代码，从调用函数的地方。</i>
 
 <i>即使不把它保存为变量，您也可以使用返回值：</i>
-<p>document.getElementById("demo").innerHTML=myFunction();</p>
+<pre>document.getElementById("demo").innerHTML=myFunction();</pre>
 
 <i>在您仅仅希望退出函数时 ，也可使用 return 语句。返回值是可选的：</i>
-<p>
+<pre>
     function myFunction(a,b) {
         if (a>b) {
             return;
         }
         x=a+b
     }
-</p>
+</pre>
 
 <h2>局部 JavaScript 变量</h2>
 

@@ -15,9 +15,8 @@
     <li>
         <h4>Date()</h4>
 
-        <p>
-            document.write(Date()); // Fri Jul 07 2017 15:37:20 GMT+0800 (中国标准时间)
-        </p>
+        <pre>
+            document.write(Date()); // Fri Jul 07 2017 15:37:20 GMT+0800 (中国标准时间)</pre>
 
         <i>返回当日的日期时间对象</i>
     </li>
@@ -25,10 +24,9 @@
     <li>
         <h4>getTime()</h4>
 
-        <p>
+        <pre>
             var date = new Date();
-            document.write(date.getTime()); // 1499413381421
-        </p>
+            document.write(date.getTime()); // 1499413381421</pre>
 
         <i>返回从 1970 年 1 月 1 日至今的毫秒数。</i>
     </li>
@@ -36,11 +34,10 @@
     <li>
         <h4>setFullYear()</h4>
 
-        <p>
+        <pre>
             var date = new Date();
             date.setFullYear(2017, 01, 05);
-            document.write(date); // Sun Feb 05 2017 15:55:34 GMT+0800 (中国标准时间)
-        </p>
+            document.write(date); // Sun Feb 05 2017 15:55:34 GMT+0800 (中国标准时间)</pre>
 
         <i>year参数必要，month、day参数可选。</i>
         <i>月份从0开始。</i>
@@ -50,10 +47,9 @@
     <li>
         <h4>toUTCString()</h4>
 
-        <p>
+        <pre>
             var date = new Date();
-            document.write(date.toUTCString()); // "Fri, 07 Jul 2017 08:14:04 GMT"
-        </p>
+            document.write(date.toUTCString()); // "Fri, 07 Jul 2017 08:14:04 GMT"</pre>
 
         <i>UTC，协调世界时；GMT，格林尼治时间。在不精确到秒的情况下，视二者等同。</i>
         <i>返回一个字符串。</i>
@@ -62,10 +58,9 @@
     <li>
         <h4>getDay()</h4>
 
-        <p>
+        <pre>
             var date = new Date();
-            document.write(date.getDay()); // 5（周五）
-        </p>
+            document.write(date.getDay()); // 5（周五）</pre>
 
         <i>返回一个数字</i>
         <i>0-6，周日-周六</i>
@@ -74,10 +69,9 @@
     <li>
         <h4>getHours()、getMinutes()、getSeconds()</h4>
 
-        <p>
+        <pre>
             var date = new Date();
-            console.log(date.getHours(), date.getMinutes(), date.getSeconds()); // 17 2 5
-        </p>
+            console.log(date.getHours(), date.getMinutes(), date.getSeconds()); // 17 2 5</pre>
 
         <i>返回数字</i>
         <i>补0</i>
