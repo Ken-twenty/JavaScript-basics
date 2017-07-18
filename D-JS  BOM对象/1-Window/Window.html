@@ -9,5 +9,353 @@
 
 <h2>浏览器对象模型 (BOM) 使 JavaScript 有能力与浏览器“对话”。</h2>
 
+<h2>浏览器对象模型 (BOM)</h2>
+
+<ol>
+    <li>浏览器对象模型（Browser Object Model）尚无正式标准。</li>
+    <li>由于现代浏览器已经（几乎）实现了 JavaScript 交互性方面的相同方法和属性，因此常被认为是 BOM 的方法和属性。</li>
+</ol>
+
+<h2>Window 对象</h2>
+
+<ol>
+    <li>所有浏览器都支持 window 对象。它表示浏览器窗口。</li>
+    <li>所有 JavaScript 全局对象、函数以及变量均自动成为 window 对象的成员。</li>
+</ol>
+
+<i>甚至  HTML DOM 的 document 也是 window 对象的属性之一</i>
+
+<h2>Window 尺寸</h2>
+
+<i>有三种方法能够确定浏览器窗口的尺寸（浏览器的视口，不包括工具栏和滚动条）。</i>
+
+<ol>
+    <li>
+        <h4>对于Internet Explorer、Chrome、Firefox、Opera 以及 Safari：</h4>
+
+        <ul>
+            <li>window.innerHeight - 浏览器窗口的内部高度</li>
+            <li>window.innerWidth - 浏览器窗口的内部宽度</li>
+        </ul>
+    </li>
+    <li>
+        <h4>对于 Internet Explorer 8、7、6、5：</h4>
+
+        <ul>
+            <li>document.documentElement.clientHeight</li>
+            <li>document.documentElement.clientWidth</li>
+        </ul>
+    </li>
+    <li>
+        <h4>或者</h4>
+
+        <ul>
+            <li>document.body.clientHeight</li>
+            <li>document.body.clientWidth</li>
+        </ul>
+    </li>
+</ol>
+
+<i>实用的 JavaScript 方案（涵盖所有浏览器）：</i>
+
+<pre>
+    var windowWidth = window.innerWidth
+    || document.documentElement.clientWidth
+    || document.body.clientWidth;
+
+    var windowHeight = window.innerHeight
+    || document.documentElement.clientHeight
+    || document.body.clientHeight;
+</pre>
+
+<h2>其他 Window 方法</h2>
+
+<ul>
+    <li>
+        <h4>window.open(URL,name,features,replace) - 打开新窗口</h4>
+
+        <ol>
+            <li>URL：一个可选的字符串，声明了要在新窗口中显示的文档的 URL。如果省略了这个参数，或者它的值是空字符串，那么新窗口就不会显示任何文档。</li>
+            <li>name：一个可选的字符串，，其中包括数字、字母和下划线，该字符声明了新窗口的名称。这个名称可以用作标记 &lt;a&gt; 和 &lt;form&gt; 的属性 target 的值。如果该参数指定了一个已经存在的窗口，那么 open() 方法就不再创建一个新窗口，而只是返回对指定窗口的引用。在这种情况下，features 将被忽略。（浏览器中的某一个标签页）</li>
+            <li>features：一个可选的字符串，该字符串是一个由逗号分隔的特征列表，声明了新窗口要显示的标准浏览器的特征。如果省略该参数，新窗口将具有所有标准特征。<a href="#details">details</a> <a href="#compatibility">兼容性</a></li>
+        </ol>
+    </li>
+    <li>window.close() - 关闭当前窗口</li>
+    <li>window.moveTo() - 移动当前窗口</li>
+    <li>window.resizeTo() - 调整当前窗口的尺寸</li>
+</ul>
+
+<table id="details">
+    <tbody>
+    <tr>
+        <td>channelmode=yes|no|1|0</td>
+        <td>是否使用剧院模式显示窗口。默认为 no。</td>
+    </tr>
+    <tr>
+        <td>directories=yes|no|1|0</td>
+        <td>是否添加目录按钮。默认为 yes。（Nav2和3的目录栏是否可见 ）</td>
+    </tr>
+    <tr>
+        <td>fullscreen=yes|no|1|0</td>
+        <td>是否使用全屏模式显示浏览器。默认是 no。处于全屏模式的窗口必须同时处于剧院模式。</td>
+    </tr>
+    <tr>
+        <td>height=pixels</td>
+        <td>窗口文档显示区的高度。以像素计。</td>
+    </tr>
+    <tr>
+        <td>left=pixels</td>
+        <td>窗口的 x 坐标。以像素计。</td>
+    </tr>
+    <tr>
+        <td>location=yes|no|1|0</td>
+        <td>是否显示地址字段。默认是 yes。</td>
+    </tr>
+    <tr>
+        <td>menubar=yes|no|1|0</td>
+        <td>是否显示菜单栏。默认是 yes。</td>
+    </tr>
+    <tr>
+        <td>resizable=yes|no|1|0</td>
+        <td>窗口是否可调节尺寸。默认是 yes。</td>
+    </tr>
+    <tr>
+        <td>scrollbars=yes|no|1|0</td>
+        <td>是否显示滚动条。默认是 yes。</td>
+    </tr>
+    <tr>
+        <td>status=yes|no|1|0</td>
+        <td>是否添加状态栏。默认是 yes。</td>
+    </tr>
+    <tr>
+        <td>titlebar=yes|no|1|0</td>
+        <td>是否显示标题栏。默认是 yes。</td>
+    </tr>
+    <tr>
+        <td>toolbar=yes|no|1|0</td>
+        <td>是否显示浏览器的工具栏。默认是 yes。</td>
+    </tr>
+    <tr>
+        <td>top=pixels</td>
+        <td>窗口的 y 坐标。</td>
+    </tr>
+    <tr>
+        <td>width=pixels</td>
+        <td>窗口的文档显示区的宽度。以像素计。</td>
+    </tr>
+    </tbody>
+</table>
+
+<hr>
+
+<i>由于各浏览器有不同的弹出窗口自动处理机制，为了不影响测试准确性，在运行测试代码之前因将所有浏览设置为可以打开弹出窗口。</i>
+
+<table id="compatibility">
+    <thead>
+    <tr>
+        <td></td>
+        <td>IE6</td>
+        <td>IE7</td>
+        <td>IE8</td>
+        <td>Firefox</td>
+        <td>Safari</td>
+        <td>Chrome</td>
+        <td>Opera</td>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>channelmode</td>
+        <td class="color-fff"><small class="bg-red">不支持</small></td>
+        <td class="color-fff"><small class="bg-red">不支持</small></td>
+        <td class="color-fff"><small class="bg-red">不支持</small></td>
+        <td class="color-fff"><small class="bg-red">不支持</small></td>
+        <td class="color-fff"><small class="bg-red">不支持</small></td>
+        <td class="color-fff"><small class="bg-red">不支持</small></td>
+        <td class="color-fff"><small class="bg-red">不支持</small></td>
+    </tr>
+    <tr>
+        <td>directories</td>
+        <td class="color-fff"><small class="bg-red">不支持</small></td>
+        <td class="color-fff"><small class="bg-red">不支持</small></td>
+        <td class="color-fff"><small class="bg-red">不支持</small></td>
+        <td class="color-fff"><small class="bg-red">不支持</small></td>
+        <td class="color-fff"><small class="bg-red">不支持</small></td>
+        <td class="color-fff"><small class="bg-red">不支持</small></td>
+        <td class="color-fff"><small class="bg-red">不支持</small></td>
+    </tr>
+    <tr>
+        <td>fullscreen</td>
+        <td class="color-fff"><small class="bg-green">支持</small></td>
+        <td class="color-fff"><small class="bg-green">支持</small></td>
+        <td class="color-fff"><small class="bg-green">支持</small></td>
+        <td class="color-fff"><small class="bg-red">不支持</small></td>
+        <td class="color-fff"><small class="bg-red">不支持</small></td>
+        <td class="color-fff"><small class="bg-red">不支持</small></td>
+        <td class="color-fff"><small class="bg-red">不支持</small></td>
+    </tr>
+    <tr>
+        <td>location</td>
+        <td class="color-fff"><small class="bg-green">支持</small></td>
+        <td class="color-fff"><small class="bg-green">支持</small></td>
+        <td class="color-fff"><small class="bg-green">支持</small></td>
+        <td class="color-fff"><small class="bg-red">不支持</small> <a href="#tip7" class="tool-tip">7</a></td>
+        <td class="color-fff"><small class="bg-green">支持</small> <a href="#tip2" class="tool-tip">2</a></td>
+        <td class="color-fff"><small class="bg-red">不支持</small> <a href="#tip7" class="tool-tip">7</a></td>
+        <td class="color-fff"><small class="bg-green">支持</small> <a href="#tip8" class="tool-tip">8</a></td>
+    </tr>
+    <tr>
+        <td>menubar</td>
+        <td class="color-fff"><small class="bg-green">支持</small></td>
+        <td class="color-fff"><small class="bg-green">支持</small> <a href="#tip1" class="tool-tip">1</a></td>
+        <td class="color-fff"><small class="bg-green">支持</small> <a href="#tip1" class="tool-tip">1</a></td>
+        <td class="color-fff"><small class="bg-green">支持</small> <a href="#tip1" class="tool-tip">1</a></td>
+        <td class="color-fff"><small class="bg-green">支持</small> <a href="#tip1" class="tool-tip">1</a></td>
+        <td class="color-fff"><small class="bg-red">不支持</small> <a href="#tip9" class="tool-tip">9</a></td>
+        <td class="color-fff"><small class="bg-red">不支持</small> <a href="#tip9" class="tool-tip">9</a></td>
+    </tr>
+    <tr>
+        <td>resizable</td>
+        <td class="color-fff"><small class="bg-green">支持</small></td>
+        <td class="color-fff"><small class="bg-green">支持</small></td>
+        <td class="color-fff"><small class="bg-green">支持</small></td>
+        <td class="color-fff"><small class="bg-red">不支持</small> <a href="#tip10" class="tool-tip">10</a></td>
+        <td class="color-fff"><small class="bg-red">不支持</small> <a href="#tip10" class="tool-tip">10</a></td>
+        <td class="color-fff"><small class="bg-red">不支持</small> <a href="#tip10" class="tool-tip">10</a></td>
+        <td class="color-fff"><small class="bg-red">不支持</small> <a href="#tip10" class="tool-tip">10</a></td>
+    </tr>
+    <tr>
+        <td>scrollbars</td>
+        <td class="color-fff"><small class="bg-green">支持</small></td>
+        <td class="color-fff"><small class="bg-green">支持</small></td>
+        <td class="color-fff"><small class="bg-green">支持</small></td>
+        <td class="color-fff"><small class="bg-green">支持</small></td>
+        <td class="color-fff"><small class="bg-red">不支持</small> <a href="#tip11" class="tool-tip">11</a></td>
+        <td class="color-fff"><small class="bg-red">不支持</small> <a href="#tip11" class="tool-tip">11</a></td>
+        <td class="color-fff"><small class="bg-green">支持</small></td>
+    </tr>
+    <tr>
+        <td>status</td>
+        <td class="color-fff"><small class="bg-green">支持</small></td>
+        <td class="color-fff"><small class="bg-green">支持</small> <a href="#tip12" class="tool-tip">12</a></td>
+        <td class="color-fff"><small class="bg-green">支持</small></td>
+        <td class="color-fff"><small class="bg-red">不支持</small> <a href="#tip13" class="tool-tip">13</a></td>
+        <td class="color-fff"><small class="bg-green">支持</small></td>
+        <td class="color-fff"><small class="bg-red">不支持</small> <a href="#tip13" class="tool-tip">13</a></td>
+        <td class="color-fff"><small class="bg-red">不支持</small> <a href="#tip13" class="tool-tip">13</a></td>
+    </tr>
+    <tr>
+        <td>titlebar</td>
+        <td class="color-fff"><small class="bg-red">不支持</small></td>
+        <td class="color-fff"><small class="bg-red">不支持</small></td>
+        <td class="color-fff"><small class="bg-red">不支持</small></td>
+        <td class="color-fff"><small class="bg-red">不支持</small></td>
+        <td class="color-fff"><small class="bg-red">不支持</small></td>
+        <td class="color-fff"><small class="bg-red">不支持</small></td>
+        <td class="color-fff"><small class="bg-red">不支持</small></td>
+    </tr>
+    <tr>
+        <td>toolbar</td>
+        <td class="color-fff"><small class="bg-green">支持</small></td>
+        <td class="color-fff"><small class="bg-green">支持</small></td>
+        <td class="color-fff"><small class="bg-green">支持</small></td>
+        <td class="color-fff"><small class="bg-green">支持</small></td>
+        <td class="color-fff"><small class="bg-green">支持</small> <a href="#tip2" class="tool-tip">2</a></td>
+        <td class="color-fff"><small class="bg-red">不支持</small> <a href="#tip14" class="tool-tip">14</a></td>
+        <td class="color-fff"><small class="bg-red">不支持</small> <a href="#tip14" class="tool-tip">14</a></td>
+    </tr>
+    <tr>
+        <td>top</td>
+        <td class="color-fff"><small class="bg-green">支持</small> <a href="#tip3" class="tool-tip">3</a></td>
+        <td class="color-fff"><small class="bg-green">支持</small></td>
+        <td class="color-fff"><small class="bg-green">支持</small> <a href="#tip3" class="tool-tip">3</a></td>
+        <td class="color-fff"><small class="bg-green">支持</small> <a href="#tip4" class="tool-tip">4</a></td>
+        <td class="color-fff"><small class="bg-green">支持</small> <a href="#tip4" class="tool-tip">4</a></td>
+        <td class="color-fff"><small class="bg-red">不支持</small> <a href="#tip5" class="tool-tip">5</a></td>
+        <td class="color-fff"><small class="bg-red">不支持</small> <a href="#tip5" class="tool-tip">5</a></td>
+    </tr>
+    <tr>
+        <td>left</td>
+        <td class="color-fff"><small class="bg-green">支持</small> <a href="#tip3" class="tool-tip">3</a></td>
+        <td class="color-fff"><small class="bg-green">支持</small></td>
+        <td class="color-fff"><small class="bg-green">支持</small> <a href="#tip3" class="tool-tip">3</a></td>
+        <td class="color-fff"><small class="bg-green">支持</small> <a href="#tip4" class="tool-tip">4</a></td>
+        <td class="color-fff"><small class="bg-green">支持</small> <a href="#tip4" class="tool-tip">4</a></td>
+        <td class="color-fff"><small class="bg-red">不支持</small> <a href="#tip5" class="tool-tip">5</a></td>
+        <td class="color-fff"><small class="bg-red">不支持</small> <a href="#tip5" class="tool-tip">5</a></td>
+    </tr>
+    <tr>
+        <td>width</td>
+        <td class="color-fff"><small class="bg-green">支持</small></td>
+        <td class="color-fff"><small class="bg-green">支持</small></td>
+        <td class="color-fff"><small class="bg-green">支持</small></td>
+        <td class="color-fff"><small class="bg-green">支持</small></td>
+        <td class="color-fff"><small class="bg-green">支持</small></td>
+        <td class="color-fff"><small class="bg-red">不支持</small> <a href="#tip6" class="tool-tip">6</a></td>
+        <td class="color-fff"><small class="bg-green">支持</small></td>
+    </tr>
+    <tr>
+        <td>height</td>
+        <td class="color-fff"><small class="bg-green">支持</small></td>
+        <td class="color-fff"><small class="bg-green">支持</small></td>
+        <td class="color-fff"><small class="bg-green">支持</small></td>
+        <td class="color-fff"><small class="bg-green">支持</small></td>
+        <td class="color-fff"><small class="bg-green">支持</small></td>
+        <td class="color-fff"><small class="bg-red">不支持</small> <a href="#tip6" class="tool-tip">6</a></td>
+        <td class="color-fff"><small class="bg-green">支持</small></td>
+    </tr>
+    <tr>
+        <td>top left</td>
+        <td class="color-fff"><small class="bg-green">支持</small> <a href="#tip3" class="tool-tip">3</a></td>
+        <td class="color-fff"><small class="bg-green">支持</small> <a href="#tip4" class="tool-tip">4</a></td>
+        <td class="color-fff"><small class="bg-green">支持</small> <a href="#tip3" class="tool-tip">3</a></td>
+        <td class="color-fff"><small class="bg-green">支持</small> <a href="#tip4" class="tool-tip">4</a></td>
+        <td class="color-fff"><small class="bg-green">支持</small> <a href="#tip4" class="tool-tip">4</a></td>
+        <td class="color-fff"><small class="bg-red">不支持</small> <a href="#tip5" class="tool-tip">5</a></td>
+        <td class="color-fff"><small class="bg-red">不支持</small> <a href="#tip5" class="tool-tip">5</a></td>
+    </tr>
+    <tr>
+        <td>width height</td>
+        <td class="color-fff"><small class="bg-green">支持</small></td>
+        <td class="color-fff"><small class="bg-green">支持</small></td>
+        <td class="color-fff"><small class="bg-green">支持</small></td>
+        <td class="color-fff"><small class="bg-green">支持</small></td>
+        <td class="color-fff"><small class="bg-green">支持</small></td>
+        <td class="color-fff"><small class="bg-green">支持</small> <a href="#tip5" class="tool-tip">5</a></td>
+        <td class="color-fff"><small class="bg-green">支持</small></td>
+    </tr>
+    <tr>
+        <td>top left width height</td>
+        <td class="color-fff"><small class="bg-green">支持</small></td>
+        <td class="color-fff"><small class="bg-green">支持</small> <a href="#tip4" class="tool-tip">4</a></td>
+        <td class="color-fff"><small class="bg-green">支持</small> <a href="#tip3" class="tool-tip">3</a></td>
+        <td class="color-fff"><small class="bg-green">支持</small> <a href="#tip4" class="tool-tip">4</a></td>
+        <td class="color-fff"><small class="bg-green">支持</small> <a href="#tip4" class="tool-tip">4</a></td>
+        <td class="color-fff"><small class="bg-green">支持</small> <a href="#tip3" class="tool-tip">3</a></td>
+        <td class="color-fff"><small class="bg-green">支持</small> <a href="#tip4" class="tool-tip">4</a></td>
+    </tr>
+    </tbody>
+</table>
+
+<ol>
+    <li id="tip1">IE7 IE8 Firefox Safari 中，当 "menubar" 选项为 "yes" 时，默认不显示菜单栏，需要按 ALT 键后菜单栏才可显示；相反当 "menubar" 选项为 "no" 时，即使按了 ALT 键也不会显示菜单栏。</li>
+    <li id="tip2">Safari 中，开启 "location" 选项与开启 "toolbar" 选项时显示效果一致。</li>
+    <li id="tip3">IE6 IE8 Chrome 中，使用 "top" 和 "left" 定位，如果出现设定的的坐标值过大，弹出窗口将可能显示在屏幕可视范围外。</li>
+    <li id="tip4">IE7 Firefox Safari Opera 中，使用 "top" 和 "left" 定位，如果出现设定的的坐标值过大，窗口会自动调整 "top" 与 "left" 值，确保窗口正常显示在屏幕可视区域内。</li>
+    <li id="tip5">Chrome Opera 中，不支持在没有设定 "width" 与 "height" 值的情况下独立使用 "left" 和 "top"，此时 "left" "top" 设定值均不生效。</li>
+    <li id="tip6">Chrome 中，不支持 width 或 height 的独立使用，两者必须一起使用。结合【标注5】说明可知，在 Chrome 中弹出窗口限定位置时，都必须将他们全部赋值，否则都将不起作用。</li>
+    <li id="tip7">Firefox Chrome 中，地址栏会始终显示。</li>
+    <li id="tip8">Opera 中，地址栏默认不显示，但可以点击页面最上方横条使他显示出来，设置 "location=yes" 后地址栏会自动显示出来。</li>
+    <li id="tip9">Chrome Opera 中，不论 "menubar" 值如何设置，永远不显示菜单栏。</li>
+    <li id="tip10">Firefox Safari Chrome Opera 中，无论 "resizable"值如何设置，窗口永远可由用户调整大小。</li>
+    <li id="tip11">Safari Chrome 中，在页面存在滚动条的情况下，无论 "scrollbars"值如何设置，滚动条始终可见。</li>
+    <li id="tip12">IE7 在 Windows XP SP3 系统中默认可以支持 "status " 参数隐藏状态栏；而在 Windows Vista 系统默认环境下不支持 "status " 参数，状态栏始终可见。这与两个系统中默认的 IE7 小版本号不同有关，前者版本号较低，后者版本号较高。</li>
+    <li id="tip13">Firefox 中，无论 "status" 值如何设置，状态栏始终可见，而 Chrome Opera 中，则与前者相反，状态栏始终不可见。</li>
+    <li id="tip14">Chrome Opera 中，无论 "toolbar" 值如何设置，始终不显示工具栏。</li>
+</ol>
 </body>
+
+<script>
+//    window.open('http://www.baidu.com', '百度', 'width=20px, height=20px, left=100px, top=100px')
+</script>
 </html>

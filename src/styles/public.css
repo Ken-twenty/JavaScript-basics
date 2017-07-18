@@ -67,6 +67,40 @@ tbody > tr:nth-of-type(2n + 1) {
     background-color: #abcdef;
 }
 
+a {
+    text-decoration: none;
+    color: blue;
+}
+
+small {
+    border-radius: 8px;
+    padding: 2px 6px;
+    font-size: 14px;
+}
+
 .text-center {
+    text-align: center;
+}
+
+.bg-red {
+    background: orangered;
+}
+
+.bg-green {
+    background: limegreen;
+}
+
+.color-fff {
+    color: #fff;
+}
+
+.tool-tip {
+    background: #000;
+    border-radius: 8px;
+    color: #fff;
+    padding: 0 2px;
+    font-size: 14px;
+    width: 1.4rem;
+    display: inline-block;
     text-align: center;
 }
