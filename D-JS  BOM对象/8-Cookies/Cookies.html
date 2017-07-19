@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript Cookies</title>
+    <link rel="stylesheet" href="../../src/styles/public.css">
+</head>
+<body>
+
+<h2>JavaScript Cookies</h2>
+
+<h2>什么是cookie?</h2>
+
+<ol>
+    <li>cookie 是存储于访问者的计算机中的变量。每当同一台计算机通过浏览器请求某个页面时，就会发送这个 cookie。你可以使用 JavaScript 来创建和取回 cookie 的值。</li>
+</ol>
+
+<h2>cookie 用来识别用户。</h2>
+
+<i>增加cookie键值时可以设置expires限制该cookie键值的有效期。（删除则是把有效期设置为过去）</i>
+
+<script type="text/javascript">
+    function getCookie(key) {
+        if (document.cookie.length > 0) {
+            var start = document.cookie.indexOf(key + "=");
+
+            if (start !== -1) {
+                start = start + key.length + 1; // + 1 是因为还要算上等号的距离
+
+                var end = document.cookie.indexOf(";", start);
+
+                if (end === -1) {
+                    end = document.cookie.length
+                }
+
+                return decodeURI(document.cookie.substring(start, end))
+            }
+
+        }
+
+        return ""
+    }
+
+    function setCookie(key, value, expireDays) {
+        var createDate = new Date();
+
+        createDate.setDate(createDate.getDate() + expireDays);
+        document.cookie = key + "=" + decodeURI(value) + ((typeof expireDays === undefined) ? "" : "; expires=" + createDate.toGMTString());
+    }
+</script>
+</body>
+</html>

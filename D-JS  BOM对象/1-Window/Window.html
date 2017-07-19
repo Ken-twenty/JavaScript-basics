@@ -80,9 +80,34 @@
             <li>features：一个可选的字符串，该字符串是一个由逗号分隔的特征列表，声明了新窗口要显示的标准浏览器的特征。如果省略该参数，新窗口将具有所有标准特征。<a href="#details">details</a> <a href="#compatibility">兼容性</a></li>
         </ol>
     </li>
-    <li>window.close() - 关闭当前窗口</li>
-    <li>window.moveTo() - 移动当前窗口</li>
-    <li>window.resizeTo() - 调整当前窗口的尺寸</li>
+    <li>
+        <h4>window.close() - 关闭当前窗口</h4>
+
+        <ol>
+            <li>方法 close() 将关闭由 window 指定的顶层浏览器窗口。</li>
+            <li>某个窗口可以通过调用 self.close() 或只调用 close() 来关闭其自身。</li>
+            <li>只有通过 JavaScript 代码打开的窗口才能够由 JavaScript 代码关闭。这阻止了恶意的脚本终止用户的浏览器。</li>
+        </ol>
+    </li>
+    <li>
+        <h4>window.moveTo(x, y) - 移动当前窗口</h4>
+
+        <ol>
+            <li>moveTo() 方法可把窗口的左上角移动到一个指定的坐标。</li>
+            <li>出于安全方面的原因，浏览器限制此方法使其不能把窗口移出屏幕。</li>
+            <li>只有通过 JavaScript 代码打开的窗口才能够由 JavaScript 代码移动。这阻止了恶意的脚本移动用户的浏览器。</li>
+            <li>某个窗口可以通过调用 self.moveTo() 或只调用 moveTo() 来移动其自身。</li>
+        </ol>
+    </li>
+    <li>
+        <h4>window.resizeTo(width, height) - 调整当前窗口的尺寸</h4>
+
+        <ol>
+            <li>resizeTo() 方法用于把窗口大小调整为指定的宽度和高度。（以像素计）</li>
+            <li>只有通过 JavaScript 代码打开的窗口才能够由 JavaScript 代码重新设置宽高。这阻止了恶意的脚本修改用户的浏览器。</li>
+            <li>某个窗口可以通过调用 self.resizeTo() 或只调用 resizeTo() 来修改其自身。</li>
+        </ol>
+    </li>
 </ul>
 
 <table id="details">
