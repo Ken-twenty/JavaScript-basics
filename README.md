@@ -9,3 +9,7 @@
  - with(obj) {//key = xxx, fn()} 代码块可以方便地在里面调用obj的成员
 
  - formName.inputName === domObj
+
+ - API 是应用程序编程接口（Application Programming Interface）的缩写。如包含属性和方法的库，用于操作 HTML DOM。
+
+ - CDN (Content Delivery Network) - 内容分发网络，是包含可分享代码库的服务器网络。
